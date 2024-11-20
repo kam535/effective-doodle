@@ -118,11 +118,11 @@ menu:
   - label: 'Reuse'
     link: '/reuse/'
   - label: 'Timeline'
-  - link: '/timeline.html'
+  - link: '/timeline/'
   - label: 'Data'
-  - link: '/data.html'
+  - link: '/data/'
   - label: 'Map'
-  - link: '/map.html'
+  - link: '/map/'
 
 # --------------------------------------------------------------
 # SITE FOOTER SETTINGS
