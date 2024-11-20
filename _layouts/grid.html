@@ -9,10 +9,10 @@ layout: timelinedefault
     <h1>{{ group.name }}0's</h1>
     <div class="card-deck pt-3">
       {% for item in group.items %}
-      <a href="{{ event.url | relative_url }}" class="card text-white">
+      <a href="{{ item.url | relative_url }}" class="card text-white">
         {% if item.thumbnail %}
         {% capture imageURL %}{{ item.thumbnail }}{% endcapture %}
-        <img class="card-img" src="{{ imageURL | relative_url }}" alt="{{ event.title }}">
+        <img class="card-img" src="{{ imageURL | relative_url }}" alt="{{ item.label }}">
         {% else %}
         <svg class="card-img" width="400px" height="400px" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Event image">
           <title>Placeholder</title>
