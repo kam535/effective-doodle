@@ -104,7 +104,7 @@ menu:
   - label: 'Reuse'
     link: '/reuse/'
   - label: 'Timeline'
-    link: 'pages/timeline/'
+    link: '/timeline/'
 
 
 # --------------------------------------------------------------
