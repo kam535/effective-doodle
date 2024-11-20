@@ -103,12 +103,7 @@ menu:
     link: '/search/'
   - label: 'Reuse'
     link: '/reuse/'
-  - label: 'Timeline'
-  - link: '/timeline.html/'
-  - label: 'Data'
-  - link: '/data/'
-  - label: 'Map'
-  - link: '/map/'
+
 
 # --------------------------------------------------------------
 # SITE FOOTER SETTINGS
