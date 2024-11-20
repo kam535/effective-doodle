@@ -104,7 +104,7 @@ menu:
   - label: 'Reuse'
     link: '/reuse/'
   - label: 'Timeline'
-  - link: '/timeline/'
+  - link: '/timeline.html/'
   - label: 'Data'
   - link: '/data/'
   - label: 'Map'
