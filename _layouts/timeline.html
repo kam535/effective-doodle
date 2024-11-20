@@ -54,13 +54,7 @@ layout: timelinedefault
             </a>
           </h1>
           <p class="small event-date position-absolute mb-0">
-            {% assign startYear = item._date| date: "%Y" %}
-            {% assign endYear = item._date| date: "%Y" %}
-            {% if startYear == endYear %}
-            {{ item._date | date: "%B %e" }}
-            {% else %}
-              {{ item._date | date: "%B %e, %Y" }}
-            {% endif %}
+            {{ item._date | date: "%B %e, %Y" }}
           </p>
         </div>
       </div>
