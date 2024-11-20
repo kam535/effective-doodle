@@ -42,7 +42,7 @@ layout: timelinedefault
               {{ item.label }}
             </h1>
             <h1 class="event-title d-md-none">
-              <a class="text-white" href="{{ event.url | relative_url }}">
+              <a class="text-white" href="{{ item.url | relative_url }}">
                 {{ item.label }}
               </a>
             </h1>
@@ -50,7 +50,7 @@ layout: timelinedefault
               {{item.description | newline_to_br | truncatewords: 75}}
             </p>
             <p class="d-none d-md-block">
-              <a class="text-white" href="{{ event.url | relative_url }}">
+              <a class="text-white" href="{{ item.url | relative_url }}">
                 Continue reading
               </a>
             </p>
