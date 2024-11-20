@@ -1,45 +1,21 @@
 ---
 layout: default
 ---
-<div class="container-fluid">
-  <div class="row align-items-center" id="tag-viewport">
-    <div class="col">
-      <div class="owl-carousel" id="tag-carousel">
-        {% assign taglist = '' %}
-        {{ taglist }}
-        {% for event in site.events %}
-          {% assign tags = event.tTags | split:', ' %}
-          {% for tag in tags %}
-            {% assign taglist = taglist | append: tag | append: ', ' %}
-          {% endfor %}
-        {% endfor %}
-        {% assign taglist = taglist | split: ', ' | uniq %}
-        {% for tag in taglist %}
-        <div class="tag p-2 bg-light small rounded d-inline-block">
-          {% capture tagURL %}/tags/#{{ tag | url_encode }}{% endcapture %}
-          <a href="{{ tagURL | relative_url }}" class="text-dark">
-            {{tag}}
-          </a>
-        </div>
-        {% endfor %}
-      </div>
-    </div>
-  </div>
   <div class="row align-items-center" id="timeline-viewport">
-    <div class="owl-carousel" id="event-carousel">
-      {% assign sortedEvents = site.events | sort: 'dateStart' %}
-      {% assign groups = sortedEvents | group_by_exp:"item", "item.dateStart | truncate: 3, ''"  %}
+    <div class="owl-carousel" id="item-carousel">
+      {% assign sortedItems = site.data.[site metadata] | sort: '_date' %}
+      {% assign groups = sortedItems | group_by_exp:"item", "item._date | truncate: 3, ''"  %}
       {% for group in groups %}
       {% assign decade = group.name  %}
       {% assign count = 0  %}
-      {% for event in group.items %}
-      <div class="card text-white shadow" data-dateStart="{{ event.dateStart | date: "%Y" }}" data-hash="{{ event.title | url_encode }}">
+      {% for item in group.items %}
+      <div class="card text-white shadow" data-_date="{{ item._date | date: "%Y" }}" data-hash="{{ item.label | url_encode }}">
         {% if count == 0 %}
-        <h2 class="decade text-dark font-italic">{{decade}}0's</h2>
+      <h2 class="decade text-dark font-italic">{{decade}}0's</h2>
         {% endif %}
-        {% if event.image-tile %}
-        {% capture imageURL %}/assets/img/{{ event.image-tile }}{% endcapture %}
-        <img class="card-img" src="{{ imageURL | relative_url }}" alt="{{ event.title }}">
+        {% if item.label %}
+        {% capture imageURL %}/assets/img/{{ item.image-tile }}{% endcapture %}
+        <img class="card-img" src="{{ imageURL | relative_url }}" alt="{{ item.label }}">
         {% else %}
         <svg class="card-img" width="400px" height="400px" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Event image">
           <title>Placeholder</title>
@@ -48,20 +24,20 @@ layout: default
         {% endif %}
 
         <div class="card-img-overlay d-flex justify-content-center align-items-center rounded">
-          <h1 class="mb-0 text-center event-title">
-            <a href="{{ event.url | relative_url }}" class="text-white">
-              {{ event.title }}
+          <h1 class="mb-0 text-center item-label">
+            <a href="{{ item.url | relative_url }}" class="text-white">
+              {{ item.label }}
             </a>
           </h1>
-          <p class="small event-date position-absolute mb-0">
-            {% assign startYear = event.dateStart | date: "%Y" %}
-            {% assign endYear = event.dateEnd | date: "%Y" %}
+          <p class="small item-_date position-absolute mb-0">
+            {% assign startYear = item._date| date: "%Y" %}
+            {% assign endYear = item._date | date: "%Y" %}
             {% if startYear == endYear %}
-            {{ event.dateStart | date: "%B %e" }} - {{ event.dateEnd | date: "%B %e, %Y" }}
+            {{ item._date | date: "%B %e" }} - {{ item._date | date: "%B %e, %Y" }}
             {% else %}
-              {{ event.dateStart | date: "%B %e, %Y" }}
-              {% if event.dateEnd %}
-              - {{ event.dateEnd | date: "%B %e, %Y" }}
+              {{ item._date| date: "%B %e, %Y" }}
+              {% if item._date %}
+              - {{ item._date | date: "%B %e, %Y" }}
               {% endif %}
             {% endif %}
           </p>
