@@ -4,19 +4,19 @@ layout: default
 <div class="container-fluid">
   <div class="row align-items-center" id="single-viewport">
     <div class="owl-carousel" id="single-carousel">
-      {% assign sortedEvents = site.events | sort: 'dateStart' %}
-      {% assign groups = sortedEvents | group_by_exp:"item", "item.dateStart | truncate: 3, ''"  %}
+      {% assign sortedItems = site.qatar | sort: '_date' %}
+      {% assign groups = sortedItems | group_by_exp:"item", "item._date | truncate: 3, ''"  %}
       {% for group in groups %}
       {% assign decade = group.name  %}
       {% assign count = 0  %}
-      {% for event in group.items %}
-      <div class="card text-white shadow" data-dateStart="{{ event.dateStart | date: "%Y" }}" data-hash="{{ event.title | url_encode }}">
+      {% for item in group.items %}
+      <div class="card text-white shadow" data-_date="{{ item._date | date: "%Y" }}" data-hash="{{ item.label | url_encode }}">
         {% if count == 0 %}
         <h2 class="decade text-dark font-italic">{{decade}}0's</h2>
         {% endif %}
-        {% if event.image %}
-        {% capture imageURL %}/assets/img/{{ event.image }}{% endcapture %}
-        <img class="card-img" src="{{ imageURL | relative_url }}" alt="{{ event.title }}">
+        {% if item.full %}
+        {% capture imageURL %}{{ item.full }}{% endcapture %}
+        <img class="card-img" src="{{ imageURL | relative_url }}" alt="{{ item.label }}">
         {% else %}
         <svg class="card-img" width="400px" height="400px" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Event image">
           <title>Placeholder</title>
@@ -24,30 +24,30 @@ layout: default
         </svg>
         {% endif %}
 
-        <div class="card-img-overlay d-flex justify-content-end align-items-center rounded" data-dateStart="{{ event.dateStart | date: "%Y" }}">
+        <div class="card-img-overlay d-flex justify-content-end align-items-center rounded" data-_date="{{ item._date | date: "%Y" }}">
           <div class="col-12 col-md-8 col-lg-6 col-xl-4">
             <h2 class="event-date mb-0">
-              {% assign startYear = event.dateStart | date: "%Y" %}
-              {% assign endYear = event.dateEnd | date: "%Y" %}
+              {% assign startYear = item._date | date: "%Y" %}
+              {% assign endYear = item._date | date: "%Y" %}
               {% if startYear == endYear %}
-              {{ event.dateStart | date: "%B %e" }} - {{ event.dateEnd | date: "%B %e, %Y" }}
+              {{ item._date | date: "%B %e" }} - {{ item._date | date: "%B %e, %Y" }}
               {% else %}
-               {{ event.dateStart | date: "%B %e, %Y" }}
-                {% if event.dateEnd %}
-                - {{ event.dateEnd | date: "%B %e, %Y" }}
+               {{ item._date | date: "%B %e, %Y" }}
+                {% if item._date %}
+                - {{ item._date | date: "%B %e, %Y" }}
                 {% endif %}
               {% endif %}
             </h2>
             <h1 class="event-title d-none d-md-block">
-              {{ event.title }}
+              {{ item.label }}
             </h1>
             <h1 class="event-title d-md-none">
               <a class="text-white" href="{{ event.url | relative_url }}">
-                {{ event.title }}
+                {{ item.label }}
               </a>
             </h1>
             <p class="d-none d-md-block">
-              {{event.description | newline_to_br | truncatewords: 75}}
+              {{item.description | newline_to_br | truncatewords: 75}}
             </p>
             <p class="d-none d-md-block">
               <a class="text-white" href="{{ event.url | relative_url }}">
