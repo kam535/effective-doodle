@@ -14,4 +14,5 @@ thumbnail: "/img/derivatives/iiif/images/obj3/full/250,/0/default.jpg"
 full: "/img/derivatives/iiif/images/obj3/full/1140,/0/default.jpg"
 manifest: "/img/derivatives/iiif/obj3/manifest.json"
 tTags: maps
+_dateend:
 ---
