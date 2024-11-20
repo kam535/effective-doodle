@@ -5,23 +5,23 @@ layout: timelinedefault
   <div class="row justify-content-center">
     <div class="col-md-8">
       <h1 class="mb-4">
-        {{page.title}}
+        {{page.label}}
         <br>
         <small class="text-muted">
-          {% assign startYear = page.dateStart | date: "%Y" %}
-          {% assign endYear = page.dateEnd | date: "%Y" %}
+          {% assign startYear = page._date | date: "%Y" %}
+          {% assign endYear = page._date | date: "%Y" %}
           {% if startYear == endYear %}
-          {{ page.dateStart | date: "%B %e" }} - {{ page.dateEnd | date: "%B %e, %Y" }}
+          {{ page._date | date: "%B %e" }} - {{ page._date | date: "%B %e, %Y" }}
           {% else %}
-            {{ page.dateStart | date: "%B %e, %Y" }}
-            {% if page.dateEnd %}
-            - {{ page.dateEnd | date: "%B %e, %Y" }}
+            {{ page._date | date: "%B %e, %Y" }}
+            {% if page._date %}
+            - {{ page._date | date: "%B %e, %Y" }}
             {% endif %}
           {% endif %}
         </small>
       </h1>
-      {% if page.image %}
-      {% capture imageURL %}/assets/img/{{ page.image }}{% endcapture %}
+      {% if page.full %}
+      {% capture imageURL %}{{ page.full }}{% endcapture %}
       <img class="img-fluid mb-4" src="{{ imageURL | relative_url }}" alt="{{ page.title }}">
       {% endif %}
       <p>
