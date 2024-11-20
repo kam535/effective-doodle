@@ -103,6 +103,8 @@ menu:
     link: '/search/'
   - label: 'Reuse'
     link: '/reuse/'
+  - label: 'Timeline'
+    link: 'pages/timeline/'
 
 
 # --------------------------------------------------------------
