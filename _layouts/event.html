@@ -9,13 +9,11 @@ layout: timelinedefault
         <br>
         <small class="text-muted">
           {% assign startYear = page._date | date: "%Y" %}
-          {% assign endYear = page._dateend | date: "%Y" %}
+          {% assign endYear = page._date | date: "%Y" %}
           {% if startYear == endYear %}
-          {{ page._date | date: "%B %e" }} - {{ page._dateend | date: "%B %e, %Y" }}
+          {{ page._date | date: "%B %e" }}
           {% else %}
             {{ page._date | date: "%B %e, %Y" }}
-            {% if page._dateend %}
-            - {{ page._dateend | date: "%B %e, %Y" }}
             {% endif %}
           {% endif %}
         </small>
