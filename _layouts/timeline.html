@@ -4,16 +4,16 @@ layout: timelinedefault
   <div class="row align-items-center" id="timeline-viewport">
     <div class="owl-carousel" id="item-carousel">
       {% assign sortedItems = site.qatar | sort: '_date' %}
-      {% assign groups = sortedItems | group_by_exp:"qatar_item", "qatar_item._date | truncate: 3, ''"  %}
+      {% assign groups = sortedItems | group_by_exp:"item", "item._date | truncate: 3, ''"  %}
       {% for group in groups %}
       {% assign decade = group.name  %}
       {% assign count = 0  %}
-      {% for item in group.qatar_items %}
+      {% for item in group.items %}
       <div class="card text-white shadow" data-_date="{{ qatar_item._date | date: "%Y" }}" data-hash="{{ item.label | url_encode }}">
         {% if count == 0 %}
       <h2 class="decade text-dark font-italic">{{decade}}0's</h2>
         {% endif %}
-        {% if qatar_item.label %}
+        {% if item.label %}
         {% capture imageURL %}/assets/img/derivatives/simple/{{ qatar_item.pid }}{% endcapture %}
         <img class="card-img" src="{{ imageURL | relative_url }}" alt="{{ item.label }}">
         {% else %}
@@ -26,18 +26,18 @@ layout: timelinedefault
         <div class="card-img-overlay d-flex justify-content-center align-items-center rounded">
           <h1 class="mb-0 text-center item-label">
             <a href="{{ item.url | relative_url }}" class="text-white">
-              {{ qatar_item.label }}
+              {{ item.label }}
             </a>
           </h1>
           <p class="small item-_date position-absolute mb-0">
             {% assign startYear = item._date| date: "%Y" %}
             {% assign endYear = item._date | date: "%Y" %}
             {% if startYear == endYear %}
-            {{ qatar_item._date | date: "%B %e" }} - {{ qatar_item._date | date: "%B %e, %Y" }}
+            {{ item._date | date: "%B %e" }} - {{ item._date | date: "%B %e, %Y" }}
             {% else %}
-              {{ qatar_item._date| date: "%B %e, %Y" }}
-              {% if qatar_item._date %}
-              - {{ qatar_item._date | date: "%B %e, %Y" }}
+              {{ item._date| date: "%B %e, %Y" }}
+              {% if item._date %}
+              - {{ item._date | date: "%B %e, %Y" }}
               {% endif %}
             {% endif %}
           </p>
