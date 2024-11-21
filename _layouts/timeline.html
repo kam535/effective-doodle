@@ -1,7 +1,6 @@
 ---
 layout: timelinedefault
 ---
-
 <div class="container-fluid">
   <div class="row align-items-center" id="tag-viewport">
     <div class="col">
@@ -34,7 +33,7 @@ layout: timelinedefault
       {% assign decade = group.name  %}
       {% assign count = 0  %}
       {% for item in group.items %}
-      <div class="card text-white shadow" data-_date="{{ item._date | date: "%Y" }}" data-hash="{{ item.label | url_encode }}">
+      <div class="card text-white shadow" data-dateStart="{{ item._date | date: "%Y" }}" data-hash="{{ item.label | url_encode }}">
         {% if count == 0 %}
         <h2 class="decade text-dark font-italic">{{decade}}0's</h2>
         {% endif %}
@@ -50,19 +49,28 @@ layout: timelinedefault
 
         <div class="card-img-overlay d-flex justify-content-center align-items-center rounded">
           <h1 class="mb-0 text-center event-title">
-            <a href="{{ item.url | relative_url }}" class="text-white">
+            <a href="{{ event.url | relative_url }}" class="text-white">
               {{ item.label }}
             </a>
           </h1>
           <p class="small event-date position-absolute mb-0">
-            {{ item._date | date: "%B %e, %Y" }}
+            {% assign startYear = item._date | date: "%Y" %}
+            {% assign endYear = item._date | date: "%Y" %}
+            {% if startYear == endYear %}
+            {{ item_date | date: "%B %e" }} - {{ }}
+            {% else %}
+              {{ item._date | date: "%B %e, %Y" }}
+              {% if item._date %}
+              - {{ item._date | date: "%B %e, %Y" }}
+              {% endif %}
+            {% endif %}
           </p>
         </div>
       </div>
       {% assign count = count | plus: 1 %}
       {% endfor %}
       {% endfor %}
-   </div>
+    </div>
   </div>
   <div class="row align-items-center justify-content-center py-3" id="slider-nav-viewport">
     <div class="col-auto d-none d-md-block">
