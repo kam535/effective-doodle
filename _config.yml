@@ -85,7 +85,8 @@ search:
           - artist
           - location
           - label
-          - _date
+          - dateStart
+          - dateEnd
           - object_type
           - current_location
 
