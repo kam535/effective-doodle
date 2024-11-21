@@ -3,7 +3,8 @@ pid: obj3
 artist: Unknown
 location: Egypt
 label: Map of the World
-_date: 1600
+dateStart: 1600
+dateEnd:
 object_type: map
 current_location: The Museum of Islamic Art, Qatar
 source: https://commons.wikimedia.org/wiki/File:Unknown,_Egypt,_15th_Century_-_Map_of_World_-_Google_Art_Project.jpg
