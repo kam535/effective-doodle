@@ -57,7 +57,7 @@ layout: timelinedefault
             {% assign startYear = item.dateStart | date: "%Y" %}
             {% assign endYear = item.dateEnd | date: "%Y" %}
             {% if startYear == endYear %}
-            {{ item.dateStart | date: "%B %e" }} - {{ item.dateEnd | date: "%B %e, %Y" }}
+            {{ item.dateStart | date: "%B %e" }}{{ item.dateEnd | date: "%B %e, %Y" }}
             {% else %}
               {{ item.dateStart | date: "%B %e, %Y" }}
               {% if item.dateEnd %}
