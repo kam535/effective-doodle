@@ -33,7 +33,7 @@ layout: timelinedefault
       {% assign decade = group.name  %}
       {% assign count = 0  %}
       {% for item in group.items %}
-      <div class="card text-white shadow" data-dateStart="{{ item.dateStart | date: "%Y" }}" data-hash="{{ item.label | url_encode }}">
+      <div class="card text-white shadow" data-dateStart="{{ item.dateStart }}" data-hash="{{ item.label | url_encode }}">
         {% if count == 0 %}
         <h2 class="decade text-dark font-italic">{{decade}}0's</h2>
         {% endif %}
