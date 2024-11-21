@@ -10,7 +10,7 @@ layout: timelinedefault
       {% assign decade = group.name  %}
       {% assign count = 0  %}
       {% for item in group.items %}
-      <div class="card text-white shadow" data-dateStart="{{ item.dateStart | date: "%Y" }}" data-hash="{{ item.label | url_encode }}">
+      <div class="card text-white shadow" data-dateStart="{{ item.dateStart }}" data-hash="{{ item.label | url_encode }}">
         {% if count == 0 %}
         <h2 class="decade text-dark font-italic">{{decade}}0's</h2>
         {% endif %}
@@ -24,17 +24,17 @@ layout: timelinedefault
         </svg>
         {% endif %}
 
-        <div class="card-img-overlay d-flex justify-content-end align-items-center rounded" data-dateStart="{{ item.dateStart | date: "%Y" }}">
+        <div class="card-img-overlay d-flex justify-content-end align-items-center rounded" data-dateStart="{{ item.dateStart }}">
           <div class="col-12 col-md-8 col-lg-6 col-xl-4">
             <h2 class="event-date mb-0">
-              {% assign startYear = item.dateStart | date: "%Y" %}
-              {% assign endYear = item.dateEnd | date: "%Y" %}
+              {% assign startYear = item.dateStart %}
+              {% assign endYear = item.dateEnd %}
               {% if startYear == endYear %}
-              {{ item.dateStart | date: "%B %e" }} - {{ item.dateEnd | date: "%B %e, %Y" }}
+              {{ item.dateStart }} - {{ item.dateEnd }}
               {% else %}
-                {{ item.dateStart | date: "%B %e, %Y" }}
+                {{ item.dateStart }}
                 {% if item.dateEnd %}
-                - {{ item.dateEnd | date: "%B %e, %Y" }}
+                - {{ item.dateEnd }}
                 {% endif %}
               {% endif %}
             </h2>
