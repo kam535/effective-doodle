@@ -89,6 +89,7 @@ search:
           - dateEnd
           - object_type
           - current_location
+          - tTags
 
 # --------------------------------------------------------------
 # SITE MENU SETTINGS
