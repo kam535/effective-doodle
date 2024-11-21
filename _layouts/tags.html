@@ -4,7 +4,7 @@ layout: timelinedefault
 <div class="container mt-5" id="tag-view">
   {% assign taglist = '' %}
   {{ taglist }}
-  {% for event in site.qatar %}
+  {% for item in site.qatar %}
     {% assign tags = item.tTags | split:', ' %}
     {% for tag in tags %}
       {% assign taglist = taglist | append: tag | append: ', ' %}
