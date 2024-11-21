@@ -9,7 +9,7 @@ layout: timelinedefault
     <h1>{{ group.name }}0's</h1>
     <div class="card-deck pt-3">
       {% for item in group.items %}
-      <a href="{{ event.url | relative_url }}" class="card text-white">
+      <a href="{{ item.url | relative_url }}" class="card text-white">
         {% if item.thumbnail %}
         {% capture imageURL %}{{ item.thumbnail }}{% endcapture %}
         <img class="card-img" src="{{ imageURL | relative_url }}" alt="{{ item.label }}">
