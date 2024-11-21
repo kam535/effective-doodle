@@ -3,7 +3,8 @@ pid: obj9
 artist: Mihr 'Ali
 location: Iran
 label: Portrait of Fath 'Ali Shah
-_date: '1816'
+dateStart: '1816'
+dateEnd:
 object_type: portrait
 current_location: The Museum of Islamic Art, Qatar
 source: https://commons.wikimedia.org/wiki/File:Mihr_%27Ali,_Iran,_1816_-_Portrait_of_Fath_%27Ali_Shah_-_Google_Art_Project.jpg
