@@ -2,6 +2,8 @@
 pid: obj2
 artist: Unknown
 location: Egypt
+longitude: 30.802498
+latitude: 26.820553
 label: Sulwan Al-Muta'a
 dateStart: 1500
 dateEnd:
