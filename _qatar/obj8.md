@@ -2,6 +2,8 @@
 pid: obj8
 artist: Unknown
 location: Iran
+longitude: 53.688046
+latitude: 32.427910 
 label: Silk Tapestry Depicting the story of Leila and Majnun
 dateStart: 1550
 dateEnd: 1650
