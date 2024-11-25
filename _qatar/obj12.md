@@ -2,6 +2,8 @@
 pid: obj12
 artist: Bahādur Fīrūz, ʻAbd Allāh Khān
 location: Middle East and North Africa
+longitude: 
+latitude:
 label: Excerpt from 'The Book of Horses' (فَرَس نامه [رسالة في الخيول)
 dateStart: 1628
 dateEnd: 1658
