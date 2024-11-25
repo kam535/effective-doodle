@@ -2,6 +2,8 @@
 pid: obj1
 artist: Al-Hajj Hafiz Muhammad Nuri
 location: Turkey
+longitude: 35.243320
+latitude: 38.963745
 label: The Dala'il al-Khayrat of al-Juzuli
 dateStart: 1801
 dateEnd: ""
