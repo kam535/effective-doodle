@@ -2,6 +2,8 @@
 pid: obj11
 artist: Unknown
 location: Iran
+longitude: 53.688046
+latitude: 32.427910
 label: Portrait of Sheikh Ali Mirza
 dateStart: 1800
 dateEnd: 1850
