@@ -2,6 +2,8 @@
 pid: obj7
 artist: Unknown
 location: Iran
+longitude: 53.688046
+latitude: 32.427910 
 label: Page from the Shahnama
 dateStart: 1525
 dateEnd: 1535
