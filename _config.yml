@@ -107,6 +107,8 @@ menu:
     link: '/reuse/'
   - label: 'Timeline'
     link: '/timeline/'
+  - label: 'Map'
+    link: '/map/'
 
 
 # --------------------------------------------------------------
