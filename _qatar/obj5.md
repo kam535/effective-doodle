@@ -2,6 +2,8 @@
 pid: obj5
 artist: Unknown
 location: Iran
+longitude: 53.688046
+latitude: 32.427910 
 label: Panel from Iran
 dateStart: 1600
 dateEnd: 1625
