@@ -2,6 +2,8 @@
 pid: obj9
 artist: Mihr 'Ali
 location: Iran
+longitude: 53.688046
+latitude: 32.427910
 label: Portrait of Fath 'Ali Shah
 dateStart: 1816
 dateEnd:
