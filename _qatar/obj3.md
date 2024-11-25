@@ -2,6 +2,8 @@
 pid: obj3
 artist: Unknown
 location: Egypt
+longitude: 30.802498
+latitude: 26.820553
 label: Map of the World
 dateStart: 1600
 dateEnd:
