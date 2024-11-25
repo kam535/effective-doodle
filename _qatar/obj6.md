@@ -2,6 +2,8 @@
 pid: obj6
 artist: Unknown
 location: Iran
+longitude: 53.688046
+latitude: 32.427910 
 label: Diwan of Jami Manuscript
 dateStart: 1700
 dateEnd:
