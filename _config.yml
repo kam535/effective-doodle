@@ -109,6 +109,10 @@ menu:
     link: '/timeline/'
   - label: 'Map'
     link: '/map.html'
+  - label: 'Locations'
+    link: '/locations.html'
+  - label: 'Subjects'
+    link: '/subjects.html'
 
 
 # --------------------------------------------------------------
