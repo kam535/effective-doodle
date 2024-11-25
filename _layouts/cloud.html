@@ -26,14 +26,14 @@
             {%- endif -%}
             {% assign cloud_id = "cloud-div-" | append: fields | slugify %}
             <div id="{{ cloud_id }}" class="text-center my-4 bg-{{ page.background | default: 'light' }} border rounded p-2"></div>
-            {% include assets/cloud-js.html fields=fields min=min stopwords=stopwords button=page.button shuffle=page.shuffle id=cloud_id %}
+            {% include cloud-js.html fields=fields min=min stopwords=stopwords button=page.button shuffle=page.shuffle id=cloud_id %}
          </div>
     </main>
      <!-- Bootstrap bundle JS -->
     <script src="{{ '/assets/bootstrap.bundle.min.js' | relative_url }}"></script>
     <!-- load other js -->
     <script src="{{ '/assets/lazysizes.min.js' | relative_url }}" async></script>
-    {% if layout.gallery == true or page.gallery == true %}<script src="{{ '/assets/lib/spotlight.bundle.js' | relative_url }}" defer></script>{% endif %}
+    {% if layout.gallery == true or page.gallery == true %}<script src="{{ '/assets/spotlight.bundle.js' | relative_url }}" defer></script>{% endif %}
     {% if page.custom-foot or layout.custom-foot %}
     {%- assign page_feet = page.custom-foot | split: ";" -%}
     {%- assign layout_feet = layout.custom-foot | split: ";" -%}
