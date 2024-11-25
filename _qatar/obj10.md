@@ -2,6 +2,8 @@
 pid: obj10
 artist: Unknown
 location: Iran
+longitude: 53.688046
+latitude: 32.427910 
 label: Portrait of Hasan 'Ali Mirza Shuja al-Saltana
 dateStart: 1800
 dateEnd: 1850
