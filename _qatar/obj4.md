@@ -2,6 +2,8 @@
 pid: obj4
 artist: Unknown
 location: Iran
+longitude: 53.688046
+latitude: 32.427910 
 label: Faridun crosses the River Dijla, fol. 33v
 dateStart: 1525
 dateEnd: 1535
